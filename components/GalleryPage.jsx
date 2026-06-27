@@ -4,24 +4,10 @@ import Image from 'next/image';
 import styles from './GalleryPage.module.css';
 
 const GALLERY_IMAGES = [
-  { src: '/assets/gallery-1.png', alt: 'Art gallery space' },
-  { src: '/assets/gallery-2.png', alt: 'Holding fresh hot latte' },
-  { src: '/assets/gallery-3.png', alt: 'Pouring hot water onto phin filter' },
-  { src: '/assets/gallery-4.png', alt: 'Fresh coffee cherries in basket' },
-  { src: '/assets/gallery-5.png', alt: 'Coffee roasters setup' },
-  { src: '/assets/gallery-6.png', alt: 'Barista preparing double shot espresso' },
-  { src: '/assets/gallery-7.png', alt: 'Espresso machine detail' },
-  { src: '/assets/gallery-8.png', alt: 'Signature coffee cup' },
-  { src: '/assets/gallery-9.png', alt: 'Freshly roasted Robusta coffee beans' },
-  { src: '/assets/gallery-10.png', alt: 'UMEE cafe shopfront' },
-  { src: '/assets/gallery-cafe.png', alt: 'Quiet cafe seating area' },
-  { src: '/assets/gallery-bag.png', alt: 'UMEE specialty coffee bags' },
-  { src: '/assets/phin-coffee.png', alt: 'Slow drip phin coffee extraction' },
-  { src: '/assets/coffee.png', alt: 'Hot coffee cup on table' },
-  { src: '/assets/gallery-v1.png', alt: 'Aura Roasters packaging close up' },
-  { src: '/assets/gallery-v2.png', alt: 'Barista steaming milk pitcher' },
-  { src: '/assets/gallery-v3.png', alt: 'Pour over coffee detail' },
-  { src: '/assets/gallery-v4.png', alt: 'Robusta green coffee beans sorting' }
+  { src: '/assets/gallery-art.png', alt: 'UMEE Art Space' },
+  { src: '/assets/gallery-2.png', alt: 'Morning Latte Ritual' },
+  { src: '/assets/gallery-cafe.png', alt: 'UMEE Cafe Atmosphere' },
+  { src: '/assets/gallery-bag.png', alt: 'UMEE Brand Specialty Bag' }
 ];
 
 export default function GalleryPage() {
@@ -60,28 +46,73 @@ export default function GalleryPage() {
           </p>
         </div>
 
-        {/* Masonry / Dense Grid */}
+        {/* 3-Column Editorial Grid matching UMEE Homepage layout */}
         <div className={styles.grid}>
-          {GALLERY_IMAGES.map((img, idx) => (
-            <div 
-              key={idx} 
-              className={styles.gridItem} 
-              onClick={() => setSelectedIdx(idx)}
-            >
-              <div className={styles.imgWrapper}>
-                <Image 
-                  src={img.src} 
-                  alt={img.alt} 
-                  fill 
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className={styles.img} 
-                />
-                <div className={styles.overlay}>
-                  <span className={styles.overlayText}>{img.alt}</span>
-                </div>
+          
+          {/* Left Column - Tall Image */}
+          <div className={styles.column}>
+            <div className={`${styles.imageWrapper} ${styles.tall}`} onClick={() => setSelectedIdx(0)}>
+              <Image 
+                src="/assets/gallery-art.png" 
+                alt="UMEE Art Space" 
+                fill 
+                sizes="(max-width: 1024px) 100vw, 33vw"
+                className={styles.img} 
+                priority
+              />
+              <div className={styles.overlay}>
+                <span className={styles.overlayText}>UMEE Art Space</span>
               </div>
             </div>
-          ))}
+          </div>
+
+          {/* Middle Column - Two Stacked Landscape Images */}
+          <div className={`${styles.column} ${styles.middleCol}`}>
+            <div className={`${styles.imageWrapper} ${styles.wide}`} onClick={() => setSelectedIdx(1)}>
+              <Image 
+                src="/assets/gallery-2.png" 
+                alt="Morning Latte Ritual" 
+                fill 
+                sizes="(max-width: 1024px) 100vw, 33vw"
+                className={styles.img} 
+                priority
+              />
+              <div className={styles.overlay}>
+                <span className={styles.overlayText}>Morning Latte Ritual</span>
+              </div>
+            </div>
+            <div className={`${styles.imageWrapper} ${styles.wide}`} onClick={() => setSelectedIdx(2)}>
+              <Image 
+                src="/assets/gallery-cafe.png" 
+                alt="UMEE Cafe Atmosphere" 
+                fill 
+                sizes="(max-width: 1024px) 100vw, 33vw"
+                className={styles.img} 
+                priority
+              />
+              <div className={styles.overlay}>
+                <span className={styles.overlayText}>UMEE Cafe Atmosphere</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column - Tall Image */}
+          <div className={styles.column}>
+            <div className={`${styles.imageWrapper} ${styles.tall}`} onClick={() => setSelectedIdx(3)}>
+              <Image 
+                src="/assets/gallery-bag.png" 
+                alt="UMEE Brand Specialty Bag" 
+                fill 
+                sizes="(max-width: 1024px) 100vw, 33vw"
+                className={styles.img} 
+                priority
+              />
+              <div className={styles.overlay}>
+                <span className={styles.overlayText}>UMEE Brand Specialty Bag</span>
+              </div>
+            </div>
+          </div>
+
         </div>
 
       </div>
