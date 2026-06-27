@@ -12,7 +12,7 @@
   height: 98vh;
   width: 100%;
   overflow: hidden;
-  background: radial-gradient(circle, #660b0b 0%, #3a0000 100%); /* Signature Red Background */
+  background: var(--primary); /* UMEE Official Brand Red */
   display: flex;
   align-items: center;
   justify-content: center;

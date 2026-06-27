@@ -1,5 +1,5 @@
 .section {
-  background: radial-gradient(circle, #660b0b 0%, #3a0000 100%); /* Signature Red Background */
+  background: var(--primary); /* UMEE Official Brand Red */
   color: #fdfaf4;
   padding: 150px 40px 100px 40px; /* Extra top padding to clear header */
   position: relative;
