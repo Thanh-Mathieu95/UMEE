@@ -1,0 +1,28 @@
+.main {
+  position: relative;
+  background: var(--surface);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.sections {
+  position: relative;
+  background: var(--surface);
+  border-radius: 0;
+  min-height: 100vh;
+  padding-top: 130px; /* Space for fixed header */
+  overflow: hidden;
+  transition: opacity 1s ease;
+  opacity: 0;
+}
+
+.visible .sections {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .main {
+    padding-left: 0;
+    padding-bottom: 70px;
+  }
+}

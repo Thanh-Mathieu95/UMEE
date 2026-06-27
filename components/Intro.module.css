@@ -1,0 +1,72 @@
+/* ── Fullscreen overlay ── */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background set inline per color variant */
+  transition: background 0.45s ease, opacity 0.65s ease;
+}
+.overlay.fadeOut {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ── Logo wrapper ── */
+.logoWrap {
+  opacity: 0;
+  transform: scale(0.82);
+  transition:
+    opacity  0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
+    transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.logoWrap.logoVisible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Zoom-through exit */
+.logoWrap.zoomThrough {
+  transform: scale(32);
+  opacity: 0;
+  transition:
+    transform 0.75s cubic-bezier(0.4, 0, 1, 1),
+    opacity   0.45s ease;
+}
+
+/* ── Logo image ── */
+.logoImg {
+  width: clamp(260px, 40vw, 480px);
+  height: auto;
+  /* Snap between variants with a crisp cross-fade */
+  animation: logoSwap 0.28s ease forwards;
+}
+@keyframes logoSwap {
+  from { opacity: 0; transform: scale(0.96); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* ── Skip button ── */
+.skip {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #550100;
+  border: 1px solid #550100;
+  padding: 0.6rem 1.3rem;
+  border-radius: 2px;
+  cursor: pointer;
+  background: transparent;
+  transition: background 0.3s, color 0.3s;
+  z-index: 10000;
+}
+.skip:hover {
+  background: #550100;
+  color: #F8F2E2;
+}

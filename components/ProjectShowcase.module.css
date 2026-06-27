@@ -1,0 +1,206 @@
+.mainWrapper {
+  background: #3d1a1a; /* Deep Coffee Red-Brown */
+  width: 100%;
+  position: relative;
+}
+
+.container {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.projectSection {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #3d1a1a; /* Deep Coffee Red-Brown */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.layout {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr; /* Image column takes 60% */
+  width: 100%;
+  max-width: 1600px;
+  height: 75vh;
+  padding: 5vh 5% 15vh 5%; /* Increased bottom padding to 15vh */
+  gap: 60px;
+  align-items: center;
+}
+
+
+
+.imageColumn {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start; /* Align image to the left */
+  align-items: center;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 750px; /* Significantly larger image */
+  max-height: 70vh; /* Prevents touching the bottom */
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  margin-bottom: 40px; /* Explicit bottom gap for the image itself */
+  box-shadow: 0 40px 80px rgba(0,0,0,0.6);
+}
+
+
+
+.projectImage {
+  object-fit: cover;
+}
+
+.textColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+}
+
+.textContent {
+  max-width: 500px;
+}
+
+.year {
+  display: block;
+  font-family: var(--font-mono, monospace);
+  font-size: 1.2rem;
+  opacity: 0.6;
+  margin-bottom: 20px;
+  letter-spacing: 0.1em;
+}
+
+.projectName {
+  font-family: var(--font-display, serif);
+  font-size: clamp(3rem, 5vw, 5rem);
+  line-height: 1.1;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+.description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  opacity: 0.8;
+  margin-bottom: 40px;
+}
+
+.viewLink {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.viewLink:hover {
+  opacity: 0.6;
+}
+
+@media (max-width: 1024px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    height: 90vh;
+    padding: 60px 30px 20px 30px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .imageColumn {
+    height: auto;
+    justify-content: center;
+  }
+
+  .imageWrapper {
+    max-width: 380px;
+    height: 28vh;
+    aspect-ratio: 4/3;
+    margin: 0 auto;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  }
+  
+  .textColumn {
+    align-items: center;
+    text-align: center;
+    padding-bottom: 0;
+  }
+
+  .textContent {
+    max-width: 440px;
+  }
+
+  .year {
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+  }
+
+  .projectName {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+  }
+
+  .description {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+
+  .viewLink {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .layout {
+    padding: 40px 16px 20px 16px;
+    gap: 15px;
+  }
+
+  .imageWrapper {
+    max-width: 280px;
+    height: 24vh;
+  }
+
+  .projectName {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+
+  .description {
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-height: 700px) and (max-width: 1024px) {
+  .layout {
+    gap: 10px;
+    padding: 20px 16px;
+  }
+  .imageWrapper {
+    height: 20vh;
+  }
+  .projectName {
+    font-size: 1.6rem;
+  }
+  .description {
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+  }
+}
+

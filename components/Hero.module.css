@@ -1,0 +1,281 @@
+.section {
+  padding: 12px;
+  background: #F5F0E6;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.bentoGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 420px 420px 420px;
+  gap: 12px;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.card {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--primary);
+  background: var(--surface);
+
+  /* Reveal Animation Base */
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s cubic-bezier(0.2, 0, 0.2, 1),
+    transform 1s cubic-bezier(0.2, 0, 0.2, 1);
+  transition-delay: var(--delay, 0s);
+}
+
+.card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 4-Column Grid Positioning */
+
+.card01 {
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 2;
+  background: var(--primary);
+  color: var(--surface);
+}
+
+.cardImage {
+  grid-column: 3;
+  grid-row: 1 / span 2;
+  padding: 0;
+}
+
+.card02 {
+  grid-column: 4;
+  grid-row: 1;
+  background: var(--secondary);
+  color: var(--surface);
+}
+
+.card03 {
+  grid-column: 4;
+  grid-row: 2;
+  background: #E8DFCB;
+  color: var(--primary);
+}
+
+.card04 {
+  grid-column: 1;
+  grid-row: 3;
+  background: #3E4433;
+  color: var(--surface);
+}
+
+.cardAction {
+  grid-column: 2 / span 3;
+  grid-row: 3;
+  background: #FDF9F0;
+  color: var(--primary);
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid var(--accent-green);
+}
+
+/* Content Styles */
+
+.cardHeader {
+  font-size: 11px;
+  font-weight: 700;
+  opacity: 0.6;
+  letter-spacing: 0.1em;
+}
+
+.mainTitle {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 8vw, 110px);
+  line-height: 0.8;
+  margin: 20px 0;
+  text-transform: none;
+  font-weight: 900;
+}
+
+.italic {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 900;
+  color: var(--secondary);
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 15px;
+}
+
+.bgImage {
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.cardImage:hover .bgImage {
+  transform: scale(1.05);
+}
+
+.imageOverlay {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+}
+
+.featuredTag {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 12px 20px;
+  border: 1px solid var(--accent-green);
+  display: flex;
+  flex-direction: column;
+}
+
+.tagLabel {
+  font-size: 8px;
+  font-weight: 800;
+  color: var(--secondary);
+  letter-spacing: 0.1em;
+}
+
+.tagTitle {
+  font-family: var(--font-display);
+  font-size: 20px;
+  color: var(--primary);
+  font-weight: 900;
+}
+
+.statLabel {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
+  opacity: 0.6;
+}
+
+.statValue {
+  font-family: var(--font-display);
+  font-size: 84px;
+  line-height: 1;
+  font-weight: 900;
+}
+
+.unit {
+  font-size: 20px;
+  margin-left: 4px;
+}
+
+.originTitle {
+  font-family: var(--font-display);
+  font-size: 72px;
+  line-height: 1;
+  font-weight: 900;
+}
+
+.smallText {
+  font-size: 24px;
+}
+
+.cardDesc {
+  font-size: 12px;
+  line-height: 1.5;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+.actionContent {
+  max-width: 60%;
+}
+
+.subLabel {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--secondary);
+  display: block;
+  margin-bottom: 15px;
+}
+
+.actionTitle {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 5vw, 72px);
+  line-height: 1;
+  font-weight: 900;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 15px;
+}
+
+.btnPrimary {
+  background: var(--primary);
+  color: var(--surface);
+  padding: 16px 32px;
+  border-radius: 40px;
+  font-size: 12px;
+  font-weight: 700;
+  border: none;
+}
+
+.btnSecondary {
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  padding: 16px 32px;
+  border-radius: 40px;
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+}
+
+
+
+@media (max-width: 1280px) {
+  .bentoGrid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+  }
+
+  .card01,
+  .cardImage,
+  .cardAction {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .bentoGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .card01,
+  .cardImage,
+  .card02,
+  .card03,
+  .card04,
+  .cardAction {
+    grid-column: span 1;
+    grid-row: auto;
+  }
+
+  .card {
+    transition-delay: 0.1s !important;
+  }
+}

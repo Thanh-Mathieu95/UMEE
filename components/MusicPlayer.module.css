@@ -1,0 +1,241 @@
+.wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle, #25281b 0%, #151611 100%); /* Premium dark olive gradient */
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid rgba(181, 131, 62, 0.15); /* Soft gold brand border */
+}
+
+/* Vinyl Record Container */
+.recordContainer {
+  position: relative;
+  width: 78%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background: #660b0b; /* Premium Red Vinyl */
+  box-shadow: 
+    0 25px 60px rgba(0,0,0,0.85), 
+    inset 0 0 30px rgba(0,0,0,0.7),
+    inset 0 0 2px rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 2;
+}
+
+.recordContainer:hover {
+  transform: scale(1.04);
+}
+
+/* Hourglass shiny reflection using conic-gradient */
+.recordContainer::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    rgba(255, 255, 255, 0.08) 0deg,
+    rgba(255, 255, 255, 0) 45deg,
+    rgba(255, 255, 255, 0.08) 90deg,
+    rgba(255, 255, 255, 0) 135deg,
+    rgba(255, 255, 255, 0.08) 180deg,
+    rgba(255, 255, 255, 0) 225deg,
+    rgba(255, 255, 255, 0.08) 270deg,
+    rgba(255, 255, 255, 0) 315deg,
+    rgba(255, 255, 255, 0.08) 360deg
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Rotation Animation */
+.spinning {
+  animation: rotate 10s linear infinite;
+}
+
+.paused {
+  animation-play-state: paused;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Concentric Grooves on the vinyl */
+.recordContainer::after {
+  content: '';
+  position: absolute;
+  top: 4%; left: 4%; right: 4%; bottom: 4%;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  box-shadow: 
+    inset 0 0 30px rgba(0,0,0,0.8),
+    0 0 0 6px rgba(255, 255, 255, 0.015),
+    0 0 0 12px rgba(255, 255, 255, 0.015),
+    0 0 0 18px rgba(255, 255, 255, 0.015),
+    0 0 0 24px rgba(255, 255, 255, 0.015),
+    0 0 0 32px rgba(255, 255, 255, 0.015),
+    0 0 0 40px rgba(255, 255, 255, 0.015),
+    0 0 0 48px rgba(255, 255, 255, 0.015),
+    0 0 0 56px rgba(255, 255, 255, 0.015);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Inner Label (Image) */
+.label {
+  position: relative;
+  width: 36%;
+  height: 36%;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 2;
+  border: 3px solid #111111;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.coverImg {
+  object-fit: cover;
+}
+
+/* Center Hole */
+.centerHole {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 14px;
+  height: 14px;
+  background: #151611;
+  border-radius: 50%;
+  z-index: 3;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.8);
+}
+
+/* Stylus (Tonearm) */
+.tonearm {
+  position: absolute;
+  top: 8%;
+  right: 12%;
+  width: 25%;
+  height: 55%;
+  z-index: 10;
+  pointer-events: none;
+  transform-origin: 80% 10%;
+  transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.tonearmActive {
+  transform: rotate(26deg);
+}
+
+.tonearmInactive {
+  transform: rotate(0deg);
+}
+
+/* Metallic Tonearm Pivot Base */
+.tonearm::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 10%;
+  width: 28px;
+  height: 28px;
+  background: radial-gradient(circle, #aaaaaa 20%, #555555 60%, #111111 100%);
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5), inset 0 1px 2px rgba(255, 255, 255, 0.4);
+}
+
+/* Tonearm metal body */
+.armBody {
+  width: 5px;
+  height: 75%;
+  background: linear-gradient(to right, #f0f0f0, #b8b8b8, #6d6d6d);
+  margin-left: 55%;
+  border-radius: 3px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+  position: relative;
+}
+
+/* Counterweight (Gold Accent) */
+.armBody::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: -4px;
+  width: 13px;
+  height: 16px;
+  background: linear-gradient(to right, #b5833e, #8c6023, #b5833e);
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+
+/* Angled Headshell */
+.headshell {
+  width: 12px;
+  height: 24px;
+  background: #111111;
+  border-radius: 2px;
+  position: absolute;
+  bottom: -12px;
+  left: 45%;
+  transform: rotate(-15deg);
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+  border-left: 2px solid #555555;
+}
+
+/* Intro Overlay */
+.introOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #3d1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  cursor: pointer;
+}
+
+.introContent {
+  text-align: center;
+  color: #fff;
+}
+
+.introLogo {
+  font-family: var(--font-display, serif);
+  font-size: 5rem;
+  font-weight: 900;
+  letter-spacing: 0.2em;
+  margin-bottom: 20px;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+.introText {
+  font-family: var(--font-mono, monospace);
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  opacity: 0.7;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+  100% { opacity: 0.6; transform: scale(1); }
+}
+
+@media (max-width: 768px) {
+  .introLogo {
+    font-size: 3rem;
+  }
+}

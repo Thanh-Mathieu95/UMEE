@@ -1,0 +1,399 @@
+.section {
+  background: #fdfaf4;
+  color: var(--primary);
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* SECTION 1: HERO COLLAGE */
+.heroCollage {
+  position: relative;
+  height: 98vh;
+  width: 100%;
+  overflow: hidden;
+  background: radial-gradient(circle, #660b0b 0%, #3a0000 100%); /* Signature Red Background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid rgba(77, 0, 0, 0.1);
+}
+
+.billboard {
+  position: relative;
+  width: 100%;
+  max-width: 1250px;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.collageImg {
+  position: absolute;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 3px solid #fdfaf4; /* High-contrast white border separating overlapping images */
+}
+
+.collageImg:hover {
+  transform: scale(1.05) translateY(-8px) rotate(1deg);
+  z-index: 20 !important;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+}
+
+.img {
+  object-fit: cover;
+}
+
+/* Dense Overlapping Billboard Coordinates (Clustered around the center) */
+.img1 { top: 2%; left: 0%; width: 22%; height: 35%; z-index: 1; }
+.img2 { top: 5%; left: 16%; width: 18%; height: 28%; z-index: 2; }
+.img3 { top: 0%; left: 30%; width: 20%; height: 32%; z-index: 1; }
+.img4 { top: 2%; right: 30%; width: 20%; height: 30%; z-index: 2; }
+.img5 { top: 5%; right: 14%; width: 18%; height: 28%; z-index: 1; }
+.img6 { top: 2%; right: 0%; width: 22%; height: 35%; z-index: 2; }
+
+.img7 { top: 30%; left: 2%; width: 20%; height: 32%; z-index: 3; }
+.img8 { top: 24%; left: 23%; width: 23%; height: 38%; z-index: 2; }
+.img9 { top: 25%; right: 23%; width: 23%; height: 38%; z-index: 2; }
+.img10 { top: 30%; right: 2%; width: 20%; height: 32%; z-index: 3; }
+
+.img11 { bottom: 2%; left: 0%; width: 22%; height: 35%; z-index: 2; }
+.img12 { bottom: 5%; left: 16%; width: 18%; height: 28%; z-index: 1; }
+.img13 { bottom: 0%; right: 16%; width: 20%; height: 32%; z-index: 1; }
+.img14 { bottom: 2%; right: 0%; width: 22%; height: 35%; z-index: 2; }
+
+/* Giant text overlay in the center of the billboard */
+.titleContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 15; /* Sits completely on top of all images */
+  text-align: center;
+  pointer-events: none;
+  width: 100%;
+}
+
+.giantTitle {
+  font-family: var(--font-display);
+  font-size: 15vw;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  color: #fdfaf4; /* Clean cream white */
+  text-transform: uppercase;
+  text-shadow: 
+    0 15px 45px rgba(77, 0, 0, 0.45), 
+    0 5px 15px rgba(0, 0, 0, 0.6); /* Double shadows to pop over any image color */
+}
+
+/* SECTION 2: THE ETHOS */
+.storySection {
+  width: 100%;
+  background: #3E4433; /* Umee Signature Dark Olive Green */
+  padding: 120px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.storyContainer {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.storyGrid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 100px;
+  align-items: center;
+}
+
+.storyTextCol {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.label {
+  font-family: var(--font-mono, monospace);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--secondary);
+  text-transform: uppercase;
+}
+
+.storyHeading {
+  font-family: var(--font-display);
+  font-size: 42px;
+  font-weight: 900;
+  color: #fdfaf4; /* Cream white for contrast */
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.storyPara {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+  color: #fdfaf4;
+  opacity: 0.9;
+}
+
+.storyImgCol {
+  position: relative;
+  width: 100%;
+}
+
+.interactiveImgWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/5;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px rgba(77, 0, 0, 0.08);
+}
+
+.storyImg {
+  object-fit: cover;
+}
+
+/* SECTION 3: CORE VALUES */
+.valuesContainer {
+  padding: 120px 40px;
+  max-width: 1300px;
+  margin: 0 auto;
+  border-top: 1px solid rgba(77, 0, 0, 0.05);
+}
+
+.labelCenter {
+  font-family: var(--font-mono, monospace);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--secondary);
+  text-transform: uppercase;
+  text-align: center;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.valuesHeading {
+  font-family: var(--font-display);
+  font-size: 38px;
+  font-weight: 900;
+  color: var(--primary);
+  text-align: center;
+  margin-bottom: 60px;
+  letter-spacing: -0.02em;
+}
+
+/* Bento Grid */
+.bentoGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.bentoCard {
+  background: #f7f2e5;
+  padding: 45px;
+  border-radius: 8px;
+  border: 1px solid rgba(181, 131, 62, 0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.cardLarge {
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.cardSmall {
+  grid-column: span 1;
+}
+
+.cardTitle {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--primary);
+  letter-spacing: -0.01em;
+}
+
+.cardDesc {
+  font-size: 14px;
+  line-height: 1.6;
+  opacity: 0.8;
+}
+
+.cardImageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/3;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.cardInlineImg {
+  object-fit: cover;
+}
+
+/* SECTION 4: CALL TO ACTION */
+.ctaContainer {
+  padding: 140px 40px;
+  background: var(--primary);
+  color: #fdfaf4;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaContent {
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.decorativeStar {
+  font-size: 24px;
+  color: var(--secondary);
+  margin-bottom: 25px;
+}
+
+.ctaTitle {
+  font-family: var(--font-display);
+  font-size: 46px;
+  font-weight: 900;
+  margin-bottom: 15px;
+  letter-spacing: -0.02em;
+}
+
+.ctaSub {
+  font-size: 16px;
+  line-height: 1.5;
+  opacity: 0.8;
+  margin-bottom: 40px;
+}
+
+.ctaButton {
+  display: inline-block;
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--secondary);
+  border: 1px solid rgba(181, 131, 62, 0.4);
+  padding: 16px 36px;
+  border-radius: 2px;
+  text-decoration: none;
+  letter-spacing: 0.15em;
+  transition: all 0.3s ease;
+}
+
+.ctaButton:hover {
+  background: var(--secondary);
+  color: var(--primary);
+  border-color: var(--secondary);
+  transform: translateY(-2px);
+}
+
+/* RESPONSIVE STYLINGS */
+@media (max-width: 1024px) {
+  .heroCollage {
+    height: 75vh;
+  }
+
+  .giantTitle {
+    font-size: 18vw;
+  }
+
+  /* Simplify collage overlap coordinates on tablet */
+  .img2, .img3, .img6, .img7, .img10, .img11 {
+    display: none;
+  }
+  .img1 { width: 22%; height: 24%; top: 8%; left: 4%; }
+  .img4 { width: 22%; height: 24%; top: 8%; right: 4%; }
+  .img5 { width: 20%; height: 22%; top: 40%; left: 3%; }
+  .img8 { width: 20%; height: 22%; top: 40%; right: 3%; }
+  .img9 { width: 22%; height: 24%; bottom: 8%; left: 4%; }
+  .img12 { width: 22%; height: 24%; bottom: 8%; right: 4%; }
+  .img13 { width: 24%; height: 22%; bottom: 4%; left: 24%; }
+  .img14 { width: 24%; height: 22%; bottom: 4%; right: 24%; }
+
+  .storyGrid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .storyImgCol {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .cardLarge {
+    grid-template-columns: 1fr;
+  }
+
+  .cardImageWrapper {
+    aspect-ratio: 16/9;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroCollage {
+    height: 60vh;
+  }
+
+  /* On small mobile, reduce images to 6 and scale down to avoid total clutter */
+  .img2, .img3, .img5, .img6, .img7, .img8, .img10, .img11 {
+    display: none;
+  }
+
+  .img1 { width: 34%; height: 22%; top: 8%; left: 3%; }
+  .img4 { width: 34%; height: 22%; top: 8%; right: 3%; }
+  .img9 { width: 34%; height: 22%; bottom: 8%; left: 3%; }
+  .img12 { width: 34%; height: 22%; bottom: 8%; right: 3%; }
+  .img13 { width: 38%; height: 20%; bottom: 4%; left: 8%; }
+  .img14 { width: 38%; height: 20%; bottom: 4%; right: 8%; }
+
+  .storyContainer, .valuesContainer {
+    padding: 80px 20px;
+  }
+
+  .storyHeading {
+    font-size: 32px;
+  }
+
+  .valuesHeading {
+    font-size: 30px;
+    margin-bottom: 40px;
+  }
+
+  .bentoGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .cardLarge {
+    grid-column: span 1;
+  }
+
+  .ctaTitle {
+    font-size: 34px;
+  }
+
+  .ctaContainer {
+    padding: 100px 20px;
+  }
+}

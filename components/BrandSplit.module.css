@@ -1,0 +1,108 @@
+.wrapper {
+  position: relative;
+  height: 150vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--surface);
+  perspective: 1000px;
+}
+
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  transition: transform 0.1s ease-out;
+  transform-origin: center center;
+  overflow: hidden;
+}
+
+.darkHalf {
+  flex: 1;
+  background: var(--primary);
+  display: flex;
+  align-items: flex-end;
+  padding: 5vw;
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.lightHalf {
+  flex: 1;
+  background: var(--surface);
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 5vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.massiveText {
+  font-family: var(--font-display);
+  font-size: 25vw;
+  color: var(--surface);
+  line-height: 0.8;
+  letter-spacing: -0.05em;
+  margin: 0;
+}
+
+.info {
+  text-align: right;
+  max-width: 500px;
+  margin-top: 5vh;
+}
+
+.row {
+  display: flex;
+  gap: 3rem;
+  justify-content: flex-end;
+  margin-bottom: 4rem;
+}
+
+.label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: var(--secondary);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+
+.val {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.subtitle {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 4.5rem);
+  line-height: 1;
+  color: var(--primary);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .container {
+    height: 80vh;
+  }
+  .massiveText {
+    font-size: 30vw;
+  }
+}

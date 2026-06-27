@@ -1,0 +1,53 @@
+.videoSection {
+  position: relative;
+  height: 300vh;
+  background: #000;
+}
+
+.stickyWrapper {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+}
+
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 10;
+  width: 100%;
+  pointer-events: none;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 10vw, 8rem);
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--secondary);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}

@@ -1,0 +1,102 @@
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 70px;
+  height: 100vh;
+  /* Full height */
+  background: var(--accent-green);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2.5rem 0;
+  z-index: 1000;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.topLogo,
+.bottomLogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconCircle {
+  width: 45px;
+  height: 45px;
+  background: var(--surface);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.logoImg {
+  object-fit: contain;
+  padding: 8px;
+}
+
+.menuIcons {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.iconBtn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--surface);
+  opacity: 0.7;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.iconBtn svg {
+  width: 22px;
+  height: 22px;
+}
+
+.iconBtn:hover {
+  opacity: 1;
+  transform: scale(1.1);
+  color: #fff;
+}
+
+.iconCircleSmall {
+  width: 45px;
+  height: 45px;
+  background: var(--surface);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-green);
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: auto;
+    height: 70px;
+    flex-direction: row;
+    left: 1.5rem;
+    right: 1.5rem;
+    top: auto;
+    bottom: 1.5rem;
+    padding: 0 2rem;
+    border-radius: 2rem;
+  }
+
+  .menuIcons {
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+}

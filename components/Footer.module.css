@@ -1,0 +1,108 @@
+.footer {
+  width: 100%;
+  background: #F5F0E6;
+  border-top: 1px solid rgba(77, 0, 0, 0.1);
+}
+
+/* Top Section - Red */
+
+.topSection {
+  background: var(--primary);
+  color: var(--surface);
+  padding: 100px 40px;
+}
+
+.topContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.ctaText {
+  max-width: 600px;
+}
+
+.subLabel {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  opacity: 0.6;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.ctaTitle {
+  font-family: var(--font-display);
+  font-size: clamp(60px, 10vw, 140px);
+  line-height: 0.85;
+  font-weight: 900;
+}
+
+.italic {
+  font-style: italic;
+  color: var(--secondary);
+}
+
+
+.ctaContact {
+  max-width: 320px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-self: flex-end;
+}
+
+.contactItem {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.contactLabel {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  opacity: 0.6;
+  color: var(--secondary);
+}
+
+.contactValue {
+  font-size: 15px;
+  line-height: 1.4;
+  opacity: 0.9;
+}
+
+.ctaSocials {
+  display: flex;
+  gap: 15px;
+  margin-top: 5px;
+}
+
+.ctaSocialLink {
+  color: var(--surface);
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.8;
+}
+
+.ctaSocialLink:hover {
+  color: var(--secondary);
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 1024px) {
+  .topContainer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+  }
+  .ctaContact {
+    align-self: flex-start;
+  }
+}

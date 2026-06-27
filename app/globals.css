@@ -1,0 +1,147 @@
+/* ═══════════════════════════════════════════════════════
+   UMEE COFFEE — Design System
+   Font    : Rubik Black (900) — Bold, Rounded, Chunky
+   Palette : Warm Terracotta × Ochre × Dark Brown × Cream
+   WCAG    : 2.2 AA compliant
+═══════════════════════════════════════════════════════ */
+
+:root {
+  /* ── Color tokens (User Palette) ── */
+  --surface: #F8F2E2;     /* Cream */
+  --primary: #4D0000;     /* Deep Red */
+  --secondary: #B5833E;   /* Warm Gold */
+  --accent-green: #3E4433;/* Dark Olive Green */
+  --dark: #130800;
+  --mid: #7a4a20;
+  --light: #efe8d5;
+  --text-primary: #130800;
+  --text-secondary: #7a4a20;
+  --text-inverse: #F8F2E2;
+
+  /* ── Typography tokens ── */
+  /* --font-display and --font-body are injected by Next.js font system on <html> */
+  /* DO NOT redefine them here — circular var() breaks font loading */
+
+  --font-size-xs: 10px;
+  --font-size-sm: 12px;
+  --font-size-md: 16px;
+  --font-size-lg: 24px;
+  --font-size-xl: 28px;
+  --font-size-2xl: 48px;
+  --font-size-3xl: 80px;
+  --font-weight-base: 600;
+  --font-weight-display: 900;
+  /* Rubik Black — maximum bold     */
+  --line-height-base: 1.2;
+
+  /* ── Spacing scale (4px base) ── */
+  --space-1: 4px;
+  --space-2: 6px;
+  --space-3: 10px;
+  --space-4: 12px;
+  --space-5: 14px;
+  --space-6: 18px;
+  --space-7: 20px;
+  --space-8: 24px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* ── Radius (clean, sharp edges like REVIX) ── */
+  --radius-xs: 0px;
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+
+  /* ── Motion ── */
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-spring: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 200ms;
+  --duration-base: 400ms;
+  --duration-slow: 800ms;
+}
+
+/* ── Reset ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-body); /* force Nunito everywhere */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--font-size-md);
+  font-weight: 600;               /* Nunito rounded look needs 600+ */
+  line-height: var(--line-height-base);
+  background: var(--surface);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+/* ── Focus-visible (WCAG 2.2 AA) ── */
+:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 3px;
+  border-radius: var(--radius-xs);
+}
+
+/* ── Headline system — matches REVIX h1 spec ── */
+h1,
+h2,
+h3,
+h4,
+[class*="title"],
+[class*="headline"],
+[class*="logo"],
+[class*="brandWord"] {
+  font-family: var(--font-display);
+  font-weight: 900;
+  /* Rubik Black */
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: -0.04em;
+  /* REVIX: tight tracking */
+  line-height: 0.96;
+  /* REVIX: 96% line-height */
+  font-variant: normal;
+}
+
+/* ── Utility: scroll reveal ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity var(--duration-slow) var(--ease-spring),
+    transform var(--duration-slow) var(--ease-spring);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

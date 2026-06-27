@@ -1,0 +1,204 @@
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: transform 0.4s cubic-bezier(0.2, 0, 0.2, 1);
+}
+
+.topBar {
+  background: #3E4433;
+  color: #E8DFCB;
+  padding: 8px 40px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  transition: all 0.4s cubic-bezier(0.2, 0, 0.2, 1);
+  height: 32px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.topContent {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav {
+  background: var(--surface);
+  padding: 30px 40px; /* Slightly more padding for the larger text */
+  border-bottom: 1px solid rgba(77, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.2, 0, 0.2, 1);
+}
+
+.navContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 40px; /* Bigger logo too */
+  font-weight: 900;
+  color: var(--primary);
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+
+.menu {
+  display: flex;
+  gap: 48px; /* More gap for larger text */
+}
+
+.menuItem {
+  font-size: 14px; /* BIGGER TEXT */
+  font-weight: 800;
+  color: var(--primary);
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  position: relative;
+  padding: 5px 0;
+  transition: color 0.3s ease;
+}
+
+/* Sliding Underline Effect */
+.menuItem::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--secondary); /* Gold/Accent color */
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s cubic-bezier(0.2, 0, 0.2, 1);
+}
+
+.menuItem:hover {
+  color: var(--secondary);
+}
+
+.menuItem:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+
+
+/* Scrolled State */
+
+.scrolled .topBar {
+  height: 0;
+  opacity: 0;
+  padding: 0;
+  transform: translateY(-100%);
+}
+
+.scrolled .nav {
+  padding: 15px 40px;
+  background: rgba(245, 240, 230, 0.98);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+}
+
+.scrolled .logo {
+  font-size: 28px;
+}
+
+.scrolled .menuItem {
+  font-size: 13px;
+}
+
+/* Hamburger Toggle Button */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 18px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1100;
+  position: relative;
+  padding: 0;
+}
+
+.bar {
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary);
+  transition: all 0.3s cubic-bezier(0.2, 0, 0.2, 1);
+  transform-origin: center;
+}
+
+.hamburgerActive .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburgerActive .bar:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.hamburgerActive .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Mobile Drawer */
+.mobileDrawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  background: var(--surface);
+  z-index: 1050;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.2, 0, 0.2, 1);
+}
+
+.drawerOpen {
+  transform: translateX(0);
+}
+
+.mobileLinks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.mobileMenuItem {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 900;
+  color: var(--primary);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease;
+}
+
+.mobileMenuItem:hover {
+  color: var(--secondary);
+}
+
+@media (max-width: 1024px) {
+  .menu {
+    display: none;
+  }
+  .hamburger {
+    display: flex;
+  }
+}
