@@ -1,10 +1,12 @@
 .section {
-  background: #1c262f; /* Deep premium slate blue from the design reference */
+  background: radial-gradient(circle, #660b0b 0%, #3a0000 100%); /* Signature Red Background */
   color: #fdfaf4;
-  padding: 100px 40px;
+  padding: 150px 40px 100px 40px; /* Extra top padding to clear header */
   position: relative;
   overflow: hidden;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
 }
 
 .container {
@@ -44,7 +46,7 @@
 }
 
 .column {
-  border-left: 1px solid rgba(255, 255, 255, 0.15);
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
   padding-left: 24px;
   display: flex;
   flex-direction: column;
@@ -86,10 +88,10 @@
 /* Map frame container */
 .mapWrapper {
   width: 100%;
-  border-radius: 6px;
+  border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+  border: 3px solid #fdfaf4; /* Elegant white frame matching about page */
   background: #111;
 }
 

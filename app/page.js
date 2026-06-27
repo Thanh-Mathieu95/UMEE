@@ -8,7 +8,6 @@ import Gallery from '@/components/Gallery';
 import GalleryShowcase from '@/components/GalleryShowcase';
 import FanOutGallery from '@/components/FanOutGallery';
 import ProjectShowcase from '@/components/ProjectShowcase';
-import Location from '@/components/Location';
 import Footer from '@/components/Footer';
 import styles from './page.module.css';
 
@@ -28,7 +27,6 @@ export default function Home() {
           <GalleryShowcase />
           <Gallery />
           <FanOutGallery />
-          <Location />
           <Footer />
         </div>
       </div>
