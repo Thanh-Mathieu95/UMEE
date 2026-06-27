@@ -50,6 +50,7 @@ export default function Header() {
           <div className={styles.menu}>
             <Link href="/menu" className={styles.menuItem}>MENU</Link>
             <Link href="/#gallery" className={styles.menuItem}>GALLERY</Link>
+            <Link href="/#location" className={styles.menuItem}>LOCATION</Link>
             <Link href="/about" className={styles.menuItem}>ABOUT US</Link>
           </div>
 
@@ -74,6 +75,9 @@ export default function Header() {
           </Link>
           <Link href="/#gallery" className={styles.mobileMenuItem} onClick={() => setIsMobileMenuOpen(false)}>
             GALLERY
+          </Link>
+          <Link href="/#location" className={styles.mobileMenuItem} onClick={() => setIsMobileMenuOpen(false)}>
+            LOCATION
           </Link>
           <Link href="/about" className={styles.mobileMenuItem} onClick={() => setIsMobileMenuOpen(false)}>
             ABOUT US

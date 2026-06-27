@@ -1,0 +1,125 @@
+.section {
+  background: #1c262f; /* Deep premium slate blue from the design reference */
+  color: #fdfaf4;
+  padding: 100px 40px;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.container {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* Header block */
+.headerBlock {
+  margin-bottom: 60px;
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: 42px;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  color: #fdfaf4;
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+
+.subheading {
+  font-family: var(--font-body);
+  font-size: 15px;
+  opacity: 0.7;
+  color: #fdfaf4;
+}
+
+/* Three columns layout */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+  margin-bottom: 60px;
+}
+
+.column {
+  border-left: 1px solid rgba(255, 255, 255, 0.15);
+  padding-left: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.colTitle {
+  font-family: var(--font-mono, monospace);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--secondary); /* Brand gold */
+  margin-bottom: 8px;
+}
+
+.textLine {
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.6;
+  opacity: 0.85;
+}
+
+.emailLink {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: #fdfaf4;
+  text-decoration: none;
+  opacity: 0.85;
+  transition: all 0.3s ease;
+  width: fit-content;
+}
+
+.emailLink:hover {
+  color: var(--secondary);
+  opacity: 1;
+}
+
+/* Map frame container */
+.mapWrapper {
+  width: 100%;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: #111;
+}
+
+.mapIframe {
+  display: block;
+  width: 100%;
+  filter: grayscale(1) invert(0.9) contrast(1.1) opacity(0.9); /* Premium dark-styled map filter */
+  transition: filter 0.5s ease;
+}
+
+.mapWrapper:hover .mapIframe {
+  filter: grayscale(0.6) invert(0.9) contrast(1.1) opacity(1);
+}
+
+/* Responsive / Mobile styles */
+@media (max-width: 1024px) {
+  .section {
+    padding: 80px 20px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .column {
+    padding-left: 20px;
+  }
+
+  .heading {
+    font-size: 32px;
+  }
+}
